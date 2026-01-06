@@ -7,30 +7,30 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="relative w-full h-screen bg-gradient-to-b from-black to-transparent via-transparent">
-      <div className="relative container mx-auto py-4">
-        <div className="w-full h-[103.75px] flex justify-between items-center px-6">
-          <div className="w-[111px] h-[103.75px] bg-contain bg-no-repeat">
-            <img src={Logo} alt="logo" />
+    <header className="relative w-full bg-gradient-to-b from-black to-transparent via-transparent">
+      <div className="relative container mx-auto py-3 sm:py-4">
+        <div className="w-full flex justify-between items-center px-4 sm:px-6 md:px-8">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-contain bg-no-repeat flex-shrink-0">
+            <img src={Logo} alt="logo" className="w-full h-full" />
           </div>
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-3 sm:space-x-6">
             {/* Hamburger menu */}
             <button
-              className="lg:hidden text-white"
+              className="lg:hidden text-white text-2xl sm:text-3xl p-2 hover:bg-white hover:bg-opacity-10 rounded transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              <span className="text-xl">{isMenuOpen ? "✖" : "☰"}</span>
+              <span>{isMenuOpen ? "\u2716" : "\u2630"}</span>
             </button>
 
             {/* Navigation Links (only visible on large screens) */}
-            <nav className="hidden lg:flex space-x-6 py-2">
+            <nav className="hidden lg:flex space-x-4 xl:space-x-6 py-2">
               {navLinks.map(({ href, label }) => (
                 <a
                   key={href}
                   href={href}
                   onClick={() => setActiveLink(href)}
-                  className={`font-inter text-custom font-semibold leading-custom ${
+                  className={`font-inter text-sm xl:text-base font-semibold ${
                     activeLink === href ? "text-[#FD1640]" : "text-white"
                   } hover:text-[#FD1640] transition-colors`}
                   aria-label={label}
@@ -40,7 +40,7 @@ function Header() {
               ))}
             </nav>
             {/* Connect Wallet Button */}
-            <button className="hidden lg:block w-52 bg-gradient-to-r from-[#ED213A] to-[#FD1640] text-white text-[20px] p-3 leading-[24px] rounded-lg">
+            <button className="hidden lg:block w-40 xl:w-52 bg-gradient-to-r from-[#ED213A] to-[#FD1640] text-white text-sm xl:text-lg p-2 xl:p-3 rounded-lg hover:shadow-lg transition-shadow">
               Connect Wallet
             </button>
           </div>
@@ -48,13 +48,13 @@ function Header() {
 
         {/* Mobile Menu - shown when isMenuOpen is true */}
         {isMenuOpen && (
-          <div className="lg:hidden flex flex-col items-center space-y-4 py-6">
+          <div className="lg:hidden fixed top-0 left-0 right-0 bottom-0 z-50 bg-black bg-opacity-95 flex flex-col items-center justify-center space-y-6 pt-20">
             <button
-              className="self-end text-white text-3xl"
+              className="absolute top-6 right-6 text-white text-3xl p-2 hover:bg-white hover:bg-opacity-10 rounded transition-colors"
               onClick={() => setIsMenuOpen(false)}
               aria-label="Close menu"
             >
-              ✖
+              \u2716
             </button>
 
             {/* Navigation Links */}
@@ -66,7 +66,7 @@ function Header() {
                   setActiveLink(href);
                   setIsMenuOpen(false);
                 }}
-                className={`font-inter text-custom font-semibold leading-custom ${
+                className={`font-inter text-lg sm:text-xl font-semibold ${
                   activeLink === href ? "text-[#FD1640]" : "text-white"
                 } hover:text-[#FD1640] transition-colors`}
                 aria-label={label}
@@ -76,7 +76,7 @@ function Header() {
             ))}
 
             {/* Connect Wallet Button */}
-            <button className="w-52 bg-gradient-to-r from-[#ED213A] to-[#FD1640] text-white text-[20px] leading-[24px] rounded-lg">
+            <button className="w-48 sm:w-56 bg-gradient-to-r from-[#ED213A] to-[#FD1640] text-white text-base sm:text-lg p-3 rounded-lg hover:shadow-lg transition-shadow mt-6">
               Connect Wallet
             </button>
           </div>
