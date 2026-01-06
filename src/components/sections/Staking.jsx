@@ -7,7 +7,7 @@ import { NFTImages } from "../data-display/data";
 const Staking = () => {
   return (
     <>
-      <div className="bg-black py-12 px-4 sm:px-6 md:px-8">
+      <div className="bg-black py-8 sm:py-12 md:py-16 px-3 sm:px-6 md:px-8">
         <div className="container mx-auto max-w-7xl">
           <div className="bg-black text-white">
             <NFTDescription />

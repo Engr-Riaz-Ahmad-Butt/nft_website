@@ -2,7 +2,7 @@ import React from 'react'
 
 const Artist = () => {
   return (
-    <div className="py-12 px-4 sm:px-6 md:px-8 bg-black">
+    <div className="py-8 sm:py-12 md:py-16 px-3 sm:px-6 md:px-8 bg-black">
       <div className="container mx-auto max-w-7xl">
         <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden">
           <video

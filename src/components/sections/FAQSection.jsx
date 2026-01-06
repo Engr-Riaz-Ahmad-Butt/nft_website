@@ -23,13 +23,13 @@ const FAQSection = () => {
         />
       </div>
 
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-12 md:py-16 relative z-10">
+      <div className="container mx-auto max-w-7xl px-3 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 relative z-10">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 lg:pr-8 w-full mb-8 lg:mb-0">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 font-['Zen_Dots']">
+            <h1 className="text-lg xs:text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-['Zen_Dots']">
               Have any questions?
             </h1>
-            <p className="text-gray-400 mb-8 text-sm md:text-base">
+            <p className="text-gray-400 mb-6 sm:mb-8 text-xs xs:text-sm md:text-base leading-5 sm:leading-6">
               Curious about 3dotlink? Explore our frequently asked questions to
               find answers.
             </p>

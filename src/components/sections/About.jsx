@@ -7,7 +7,7 @@ const About = () => {
   return (
     <>
       <section
-        className="bg-cover bg-center py-12 px-4 sm:px-6 md:px-8"
+        className="bg-cover bg-center py-8 sm:py-12 md:py-16 px-3 sm:px-6 md:px-8"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${BackgroundImgm})`,
         }}
