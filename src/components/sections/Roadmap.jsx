@@ -1,4 +1,5 @@
 import { roadMapAllPhases } from "../data-display/data";
+import NFTText from "../general/NFTText";
 import RoadMapHeader from "../general/RoadMapHeader";
 import TimelinePhase from "../general/TimelinePhase";
 
@@ -19,7 +20,7 @@ const Roadmap = () => {
 
           {/* Phases */}
           <TimelinePhase />
-
+          <NFTText/>
           {/* Navigation Dots */}
           <div className="flex justify-center items-center gap-4 mt-12">
             <button className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center">
