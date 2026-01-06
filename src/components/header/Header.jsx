@@ -6,6 +6,18 @@ function Header() {
   const [activeLink, setActiveLink] = useState("#home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Prevent body scroll when menu is open
+  React.useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className="relative w-full bg-gradient-to-b from-black to-transparent via-transparent">
       <div className="relative container mx-auto py-3 sm:py-4">
@@ -48,32 +60,34 @@ function Header() {
 
         {/* Mobile Menu - shown when isMenuOpen is true */}
         {isMenuOpen && (
-          <div className="lg:hidden fixed top-0 left-0 right-0 bottom-0 z-50 bg-black bg-opacity-95 flex flex-col items-center justify-center space-y-6 pt-20">
+          <div className="lg:hidden fixed inset-0 top-0 z-50 bg-black bg-opacity-95 flex flex-col items-center justify-center space-y-6 overflow-y-auto">
             <button
-              className="absolute top-6 right-6 text-white text-3xl p-2 hover:bg-white hover:bg-opacity-10 rounded transition-colors"
+              className="absolute top-6 right-6 text-white text-3xl p-2 hover:bg-white hover:bg-opacity-10 rounded transition-colors flex items-center justify-center"
               onClick={() => setIsMenuOpen(false)}
               aria-label="Close menu"
             >
-              \u2716
+              ✕
             </button>
 
             {/* Navigation Links */}
-            {navLinks.map(({ href, label }) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => {
-                  setActiveLink(href);
-                  setIsMenuOpen(false);
-                }}
-                className={`font-inter text-lg sm:text-xl font-semibold ${
-                  activeLink === href ? "text-[#FD1640]" : "text-white"
-                } hover:text-[#FD1640] transition-colors`}
-                aria-label={label}
-              >
-                {label}
-              </a>
-            ))}
+            <div className="space-y-6 text-center">
+              {navLinks.map(({ href, label }) => (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={() => {
+                    setActiveLink(href);
+                    setIsMenuOpen(false);
+                  }}
+                  className={`font-inter text-lg sm:text-xl font-semibold block ${
+                    activeLink === href ? "text-[#FD1640]" : "text-white"
+                  } hover:text-[#FD1640] transition-colors`}
+                  aria-label={label}
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
 
             {/* Connect Wallet Button */}
             <button className="w-48 sm:w-56 bg-gradient-to-r from-[#ED213A] to-[#FD1640] text-white text-base sm:text-lg p-3 rounded-lg hover:shadow-lg transition-shadow mt-6">
