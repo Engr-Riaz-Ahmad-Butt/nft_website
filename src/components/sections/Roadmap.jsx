@@ -5,8 +5,8 @@ import TimelinePhase from "../general/TimelinePhase";
 
 const Roadmap = () => {
   return (
-    <div className="min-h-screen bg-black p-4 sm:p-6 md:p-8 text-white">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-black py-12 px-4 sm:px-6 md:px-8 text-white">
+      <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <RoadMapHeader />
 

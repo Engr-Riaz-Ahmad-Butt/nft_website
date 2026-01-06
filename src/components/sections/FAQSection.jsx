@@ -23,7 +23,7 @@ const FAQSection = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 py-16 relative z-10">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-12 md:py-16 relative z-10">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 lg:pr-8 w-full mb-8 lg:mb-0">
             <h1 className="text-3xl md:text-4xl font-bold mb-4 font-['Zen_Dots']">

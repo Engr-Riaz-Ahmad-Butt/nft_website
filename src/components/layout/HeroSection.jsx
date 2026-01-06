@@ -16,7 +16,7 @@ const HeroSection = () => {
 
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black to-transparent z-10" />
 
-      <div className="relative z-20 flex flex-col justify-center items-center text-white h-full">
+      <div className="relative z-20 flex flex-col justify-start items-center text-white h-full">
         <Header />
         <Hero />
         <Rectangle />

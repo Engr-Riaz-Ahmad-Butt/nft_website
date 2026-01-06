@@ -19,9 +19,9 @@ function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header className="relative w-full bg-gradient-to-b from-black to-transparent via-transparent">
-      <div className="relative w-full py-2 sm:py-3 md:py-4">
-        <div className="w-full flex justify-between items-center px-4 sm:px-6 md:px-8">
+    <header className="relative w-full bg-gradient-to-b from-black to-transparent via-transparent py-4">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+        <div className="w-full flex justify-between items-center">
           <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-contain bg-no-repeat flex-shrink-0">
             <img src={Logo} alt="logo" className="w-full h-full" />
           </div>
@@ -60,7 +60,7 @@ function Header() {
 
         {/* Mobile Menu - shown when isMenuOpen is true */}
         {isMenuOpen && (
-          <div className="lg:hidden fixed top-0 left-0 right-0 bottom-0 w-screen h-screen z-40 bg-black bg-opacity-95 overflow-hidden">
+          <div className="lg:hidden fixed inset-0 w-full h-full z-40 bg-black bg-opacity-95 overflow-hidden">
             {/* Close Button */}
             <div className="flex justify-end p-3 sm:p-4">
               <button
