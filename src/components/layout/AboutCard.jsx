@@ -5,8 +5,7 @@ import VerticalLineRight from "../../assets/images/verticalLineRight.png";
 
 const AboutCard = ({ image, title }) => {
   return (
-    <div className="flex flex-col items-center space-y-2 w-full xs:w-auto">
-      <div className="flex flex-col xs:flex-row items-center justify-center">
+    <div className="flex items-center justify-center">
         <div
           className="hidden xs:block h-40 sm:h-52 w-1"
           style={{
@@ -35,7 +34,6 @@ const AboutCard = ({ image, title }) => {
             backgroundImage: `url(${VerticalLineRight})`,
           }}
         />
-      </div>
     </div>
   );
 };
